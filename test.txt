@@ -1,0 +1,111 @@
+TEST
+
+Three different loads: Low - Medium - High
+
+Low: 500 nodi - 2500 population - 1000 iteration
+Medium: 1000 nodi - 5000 population - 1000 iteration
+High: 2000 nodi  - 10.000 population - 1000 iteration
+
+Scalability, Speedup and Efficiency are calculated for: 1-2-4-8-16-32-63 workers
+
+Scalability = TP(1)/TP(W)
+Speedup = TSeq/TP(W)
+Efficiency = Speedup/W
+
+(W -> Workers num)
+
+T Seq - Genetic_TSP_Sequential_RS_2.0.cpp - Low = 8.417.931
+T Seq - Genetic_TSP_Sequential_RS_2.0.cpp - Medium = 34.608.530
+T Seq - Genetic_TSP_Sequential_RS_2.0.cpp - High = 134.097.802
+
+Efficiency Low FF = 0.8955 0,7806 0,6536 0,5097 0,2014 0,0888 0,0239
+Efficiency Medium FF = 0.9365 0,8831 0,7438 0,6592 0,3270 0,1510 0,0453
+Efficiency High FF = 0.8333 0,7938 0,7088 0,6626 0,4621 0,2660 0,0994
+
+Efficiency Low C++ = 0.9183 0,7388 0,591 0,4411 0,2993 0,1766 0,0872
+Efficiency Medium C++ = 0.9721 0,879 0,7487 0,6024 0,4321 0,2786 0,1489
+Efficiency High C++ = 0.8591 0,7987 0,7071 0,6436 0,5180 0,3434 0,2094
+
+Speedup Low FF = 0.8955 1.5613 2.6144 4.0776 3.2229 2.8416 1.5095
+Speedup Medium FF = 0.9365 1.7662 2.9754 5.2736 5.2326 4.8326 2.8540
+Speedup High FF = 0.8333 1.5876 2.8354 5.3005 7.3936 8.5123 6.2614
+
+Speedup Low C++ = 0.9183 1.4776 2.364 3.5292 4.7890 5.6524 5.4922
+Speedup Medium C++ = 0.9721 1.7580 2.9949 4.8191 6.9134 8.9144 9.3805
+Speedup High C++ = 0.8591 1.5974 2.8286 5.1490 8.2886 10.9900 13.1936
+
+Scalability Low FF = 1 1.7434 2.9194 4.5532 3.5988 3.1731 1.6855
+Scalability Medium FF = 1 1.8860 3.1772 5.6314 5.5876 5.1604 3.0476
+Scalability High FF = 1 1.9051 3.4025 6.3606 8.8723 10,2147 7.5136
+
+Scalability Low C++ = 1 1.6092 2.5746 3.8434 5.2154 6.1556 5.9811
+Scalability Medium C++ = 1 1.8085 3.0809 4.9575 7.1120 9.1704 9.6499
+Scalability High C++ = 1 1.8595 3.2926 5.9938 9.6484 12.7931 15.3582
+
+T FastFlow - 1 - Genetic_TSP_Parallel_FastFlow.cpp - Low = 9.399.850 - Speedup = 0.8955 - Scalability = 1
+T FastFlow - 2 - Genetic_TSP_Parallel_FastFlow.cpp - Low = 5.391.566 - Speedup = 1.5613 - Scalability = 1.7434
+T FastFlow - 4 - Genetic_TSP_Parallel_FastFlow.cpp - Low = 3.219.814 - Speedup = 2.6144 - Scalability = 2.9194
+T FastFlow - 8 - Genetic_TSP_Parallel_FastFlow.cpp - Low = 2.064.446 - Speedup = 4.0776 - Scalability = 4.5532
+T FastFlow - 16 - Genetic_TSP_Parallel_FastFlow.cpp - Low = 2.611.908 - Speedup = 3.2229 - Scalability = 3.5988
+T FastFlow - 32 - Genetic_TSP_Parallel_FastFlow.cpp - Low = 2.962.395 - Speedup = 2.8416 - Scalability = 3.1731
+T FastFlow - 63 - Genetic_TSP_Parallel_FastFlow.cpp - Low = 5.576.727 - Speedup = 1.5095 - Scalability = 1.6855
+
+T FastFlow - 1 - Genetic_TSP_Parallel_FastFlow.cpp - Medium = 36.956.269 - Speedup = 0.9365 - Scalability = 1
+T FastFlow - 2 - Genetic_TSP_Parallel_FastFlow.cpp - Medium = 19.594.734 - Speedup = 1.7662 - Scalability = 1.8860
+T FastFlow - 4 - Genetic_TSP_Parallel_FastFlow.cpp - Medium = 11.631.742 - Speedup = 2.9754 - Scalability = 3.1772
+T FastFlow - 8 - Genetic_TSP_Parallel_FastFlow.cpp - Medium = 6.562.528 - Speedup = 5.2736 - Scalability = 5.6314
+T FastFlow - 16 - Genetic_TSP_Parallel_FastFlow.cpp - Medium = 6.613.994 - Speedup = 5.2326 - Scalability = 5.5876
+T FastFlow - 32 - Genetic_TSP_Parallel_FastFlow.cpp - Medium = 7.161.447 - Speedup = 4.8326 - Scalability = 5.1604
+T FastFlow - 63 - Genetic_TSP_Parallel_FastFlow.cpp - Medium = 12.126.308 - Speedup = 2.8540 - Scalability = 3.0476
+
+T FastFlow - 1 - Genetic_TSP_Parallel_FastFlow.cpp - High = 160.917.006 - Speedup = 0.8333 - Scalability = 1
+T FastFlow - 2 - Genetic_TSP_Parallel_FastFlow.cpp - High = 84.465.453 - Speedup = 1.5876 - Scalability = 1.9051
+T FastFlow - 4 - Genetic_TSP_Parallel_FastFlow.cpp - High = 47.293.964 - Speedup = 2.8354 - Scalability = 3.4025
+T FastFlow - 8 - Genetic_TSP_Parallel_FastFlow.cpp - High = 25.299.155 - Speedup = 5.3005 - Scalability = 6.3606
+T FastFlow - 16 - Genetic_TSP_Parallel_FastFlow.cpp - High = 18.137.067 - Speedup = 7.3936 - Scalability = 8.8723
+T FastFlow - 32 - Genetic_TSP_Parallel_FastFlow.cpp - High = 15.753.370 - Speedup = 8.5123 - Scalability = 10,2147
+T FastFlow - 63 - Genetic_TSP_Parallel_FastFlow.cpp - High = 21.416.734 - Speedup = 6.2614 - Scalability = 7.5136
+
+
+
+
+T Native - 1 - Genetic_TSP_Parallel_Native2.cpp - Low = 9.167.328 - Speedup = 0.9183 - Scalability = 1
+T Native - 2 - Genetic_TSP_Parallel_Native2.cpp - Low = 5.696.884 - Speedup = 1.4776 - Scalability = 1.6092
+T Native - 4 - Genetic_TSP_Parallel_Native2.cpp - Low = 3.560.724 - Speedup = 2.364 - Scalability = 2.5746
+T Native - 8 - Genetic_TSP_Parallel_Native2.cpp - Low = 2.385.205 - Speedup = 3.5292 - Scalability = 3.8434
+T Native - 16 - Genetic_TSP_Parallel_Native2.cpp - Low = 1.757.753 - Speedup = 4.7890 - Scalability = 5.2154
+T Native - 32 - Genetic_TSP_Parallel_Native2.cpp - Low = 1.489.272 - Speedup = 5.6524 - Scalability = 6.1556
+T Native - 63 - Genetic_TSP_Parallel_Native2.cpp - Low = 1.532.704 - Speedup = 5.4922 - Scalability = 5.9811
+
+T Native - 1 - Genetic_TSP_Parallel_Native2.cpp - Medium = 35.602.549 - Speedup = 0.9721 - Scalability = 1
+T Native - 2 - Genetic_TSP_Parallel_Native2.cpp - Medium = 19.686.502 - Speedup = 1.7580 - Scalability = 1.8085
+T Native - 4 - Genetic_TSP_Parallel_Native2.cpp - Medium = 11.555.936 - Speedup = 2.9949 - Scalability = 3.0809
+T Native - 8 - Genetic_TSP_Parallel_Native2.cpp - Medium = 7.181.542 - Speedup = 4.8191 - Scalability = 4.9575
+T Native - 16 - Genetic_TSP_Parallel_Native2.cpp - Medium = 5.006.014 - Speedup = 6.9134 - Scalability = 7.1120
+T Native - 32 - Genetic_TSP_Parallel_Native2.cpp - Medium = 3.882.333 - Speedup = 8.9144 - Scalability = 9.1704
+T Native - 63 - Genetic_TSP_Parallel_Native2.cpp - Medium = 3.689.406 - Speedup = 9.3805 - Scalability = 9.6499
+
+T Native - 1 - Genetic_TSP_Parallel_Native2.cpp - High = 156.098.733 - Speedup = 0.8591 - Scalability = 1
+T Native - 2 - Genetic_TSP_Parallel_Native2.cpp - High = 83.948.501 - Speedup = 1.5974 - Scalability = 1.8595
+T Native - 4 - Genetic_TSP_Parallel_Native2.cpp - High = 47.408.260 - Speedup = 2.8286 - Scalability = 3.2926
+T Native - 8 - Genetic_TSP_Parallel_Native2.cpp - High = 26.043.343 - Speedup = 5.1490 - Scalability = 5.9938
+T Native - 16 - Genetic_TSP_Parallel_Native2.cpp - High = 16.178.627 - Speedup = 8.2886 - Scalability = 9.6484
+T Native - 32 - Genetic_TSP_Parallel_Native2.cpp - High = 12.201.816 - Speedup = 10.9900 - Scalability = 12.7931
+T Native - 63 - Genetic_TSP_Parallel_Native2.cpp - High = 10.163.875 - Speedup = 13.1936 - Scalability = 15.3582
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
